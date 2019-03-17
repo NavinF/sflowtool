@@ -1555,6 +1555,7 @@ enum SFLCounters_type_tag {
   SFLCOUNTERS_OVSDP         = 2207,
   SFLCOUNTERS_HOST_GPU_NVML = (5703 << 12) + 1, /* = 23359489 */
   SFLCOUNTERS_BCM_TABLES    = (4413 << 12) + 3,
+  SFLCOUNTERS_BCM_DEVICE_BUFFERS    = (4413 << 12) + 1,
 };
 
 typedef union _SFLCounters_type {

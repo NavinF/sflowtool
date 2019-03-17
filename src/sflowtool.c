@@ -4334,6 +4334,12 @@ static void readCounters_bcm_tables(SFSample *sample)
   sf_log_next32(sample, "bcm_acl_egress_slices_max");
 }
 
+static void readCounters_bcm_device_buffers(SFSample *sample)
+{
+  sf_log_next32(sample, "unicast buffers percentage utilization (hundredths of a percent)");
+  sf_log_next32(sample, "multicast buffers percentage utilization (hundredths of a percent)");
+}
+
 /*_________________----------------------------__________________
   _________________  readCounters_memcache     __________________
   -----------------____________________________------------------
@@ -4808,6 +4814,7 @@ static void readCountersSample(SFSample *sample, int expanded)
     case SFLCOUNTERS_HOST_VRT_NIO: readCounters_host_vnio(sample); break;
     case SFLCOUNTERS_HOST_GPU_NVML: readCounters_host_gpu_nvml(sample); break;
     case SFLCOUNTERS_BCM_TABLES: readCounters_bcm_tables(sample); break;
+    case SFLCOUNTERS_BCM_DEVICE_BUFFERS: readCounters_bcm_device_buffers(sample); break;
     case SFLCOUNTERS_MEMCACHE: readCounters_memcache(sample); break;
     case SFLCOUNTERS_MEMCACHE2: readCounters_memcache2(sample); break;
     case SFLCOUNTERS_HTTP: readCounters_http(sample); break;
